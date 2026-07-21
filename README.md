@@ -12,6 +12,6 @@ Aero is released under the GNU GPL v3.0 license.
 
 # Credits
 
-dercode-solutions2025 - Main author of Aero
+(dercode-solutions2025)[https://www.youtube.com] - Main author of Aero
 
 hexaredecimal - Creator of logloc, the error library used for Aero.
