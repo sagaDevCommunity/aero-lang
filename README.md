@@ -9,3 +9,9 @@ Aero will be completed and released August 1st, 2026, 12:00PM Central Standard T
 
 # License
 Aero is released under the GNU GPL v3.0 license.
+
+# Credits
+
+dercode-solutions2025 - Main author of Aero
+
+hexaredecimal - Creator of logloc, the error library used for Aero.
