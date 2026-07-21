@@ -1,0 +1,3 @@
+defun main() -> int then
+    println "Hello World!"
+end
