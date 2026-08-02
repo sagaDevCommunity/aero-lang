@@ -1,6 +1,9 @@
 # Aero
 A small compiled language for rapid prototyping.
 
+# About
+Aero is a small transpiler that compiles Aero to JS, for webapps. It is designed for syntax simplicity and ease-of-use.
+
 # Resources
 I am basing Aero off of "Engineering a Compiler" and "Compilers: Principles, Techniques, and Tools".
 
