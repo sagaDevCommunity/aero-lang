@@ -1,0 +1,9 @@
+<print_stmt> ::= "println" (<str_expr> | <bool> | <int> | <double> | <identifier> | <mathexpr> ) ";"
+
+<if_stmt> ::= "if" <expr> "->" <block> ("end" | "elsif" <expr> "->" <block> "end" * | "else" "->" <block> "end" * )
+
+<comments> ::= "/*" <block> "*/"
+
+/*
+More coming tommorrow. Too tired to finish.
+*/
