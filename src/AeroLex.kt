@@ -24,6 +24,7 @@ Friday, June 12th, 2026: Switched LexMain<Int> to LexMain<Any>. Fixed the lexer 
 Thursday, July 30th, 2026: Finished up by supporting both string literals and char literals.
 Friday, July 31st, 2026: Finished the lexer by adding a double equals sign (==). Also added semicolon support and a testing function - LexTest().)
 Sunday, August 2nd, 2026: Finished the lexer (again). First upload to GitHub.
+Monday, August 3rd, 2026: Fixed a MAJOR bug in LexLine()
 */
 
 enum class Token {
