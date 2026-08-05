@@ -59,6 +59,12 @@ fun AeroCompileLine(ln: List<Any>) {
             }
             PTR++
             continue
+        } else if(ln[PTR] == Token.FuncDecl && PTR < ln.size) {
+            PTR++
+            if (ln[PTR] == Token.Identifier) {
+                	
+            }
+            OUT
         } else {
             if (PTR < ln.size) {
                 PTR++
