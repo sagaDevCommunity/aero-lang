@@ -25,6 +25,7 @@ Thursday, July 30th, 2026: Finished up by supporting both string literals and ch
 Friday, July 31st, 2026: Finished the lexer by adding a double equals sign (==). Also added semicolon support and a testing function - LexTest().)
 Sunday, August 2nd, 2026: Finished the lexer (again). First upload to GitHub.
 Monday, August 3rd, 2026: Fixed a MAJOR bug in LexLine()
+Tuesday, August 4th, 2026: Added Token.Print_Stmt and Token.Write_Stmt.
 */
 
 enum class Token {
@@ -72,7 +73,10 @@ enum class Token {
     FuncDecl,
     ExclamationMark,
     Colon,
-    RightArrow
+    RightArrow,
+    Identifier,
+    Print_Stmt,
+    Write_Stmt
 }
 
 var LexMain = mutableListOf<Any>()
@@ -154,6 +158,14 @@ fun LexLine(ln: String) {
                 continue
             } else if (Line.subList(Pointer, Pointer + 2).joinToString("") == "->") {
                 LexMain.add(Token.RightArrow)
+                Pointer += 2
+                continue
+            } else if (Line.subList(Pointer, Pointer + 7).joinToString("") == "println") {
+                LexMain.add(Token.Print_Stmt)
+                Pointer += 7
+                continue
+            } else if (Line.subList(Pointer, Pointer + 5).joinToString("") == "write") {
+                LexMain.add(Token.Write_Stmt)
                 Pointer += 2
                 continue
             }
@@ -265,6 +277,7 @@ fun LexLine(ln: String) {
                 Pointer += 1
                 continue
             } else {
+                LexMain.add(Token.Identifier)
                 LexMain.add(Line[Pointer])
                 Pointer += 1
                 continue
@@ -275,7 +288,7 @@ fun LexLine(ln: String) {
 
 fun LexTest() {
     print("[TESTING LEXER]\n\n{")
-    LexLine("""/* */ , ) ( ] [ } { = < > <= >= && || != += -= *= /= %= + - * / % ; "Hello World!" 'A' 1 2 3 4 5 6 7 8 9 0 . 123 3.14 ++ -- ** %% 1 == -> 123""")
+    LexLine("""/* s*/ , ) ( ] [ } { = < > <= >= && || != += -= *= /= %= + - * / % ; "Hello World!" 'A' 1 2 3 4 5 6 7 8 9 0 . 123 3.14 ++ -- ** %% 1 == -> 123""")
     for (i in LexMain) {
         print("Token.$i, ")
     }
