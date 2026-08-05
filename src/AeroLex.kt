@@ -281,5 +281,3 @@ fun LexTest() {
     }
     println("}")
 }
-// main() is temporary until I finish Aero
-fun main() { LexTest() }
